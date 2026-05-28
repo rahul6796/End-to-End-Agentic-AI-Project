@@ -12,7 +12,7 @@ from langchain_groq import ChatGroq
 class ConfigLoader:
 
     def __init__(self):
-        pritn('load config......')
+        print('load config......')
         self.config = load_config()
 
     def __getitem__(self, key):
@@ -39,12 +39,12 @@ class ModelLoader(BaseModel):
 
         print('loading the llm model')
 
-        if self.model_provider = 'groq':
+        if self.model_provider == 'groq':
             groq_api_key = os.getenv('GROQ_API_KEY')
             model_name = self.config['llm']['groq']['model_name']
             llm=ChatGroq(model=model_name, api_key=groq_api_key)
 
-        elif self.model_provider = 'openai':
+        elif self.model_provider == 'openai':
             pass
         
         else:

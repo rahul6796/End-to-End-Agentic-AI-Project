@@ -40,7 +40,7 @@ async def query(query: QueryRequest):
             
             final_output = output['message'][-1].content
 
-        else:
+        else: 
 
             final_output = str(output)
 
